@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Cours SQL - Colombbus</title>
+
+    <!-- font Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Open+Sans&display=swap" rel="stylesheet"> 
+
+    <!-- mon css -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+        <!-- ========================================= -->
+        <!-- Navbar -->
+        <!-- ========================================= -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </div>
+            </div>
+          </nav>
+    </div><!-- fin du container fluid -->
+
+        
+
+    <!-- ========================================= -->
+    <!-- Contenu principal -->
+    <!-- ========================================= -->
+
+    <div class="container">
+        <div class="row m-2">
+            <div class="col-sm-12">
+                <h1 class="text-center">Les requêtes MySQL</h1>
+            </div>
+        </div> <!-- fin de la première row -->
+
+        <div class="row m-2 border p-2">
+            <div class="col-sm-12">
+                <h2 class="text-center">1- Les bases d'une base de donnée</h2>
+            </div>
+            <div class="col-sm-12">
+                <ul>
+                    <li>Créer une BDD : <code>CREATE DATABASE nombdd CHARACTER SET 'utf8';</code></li>
+                    <li>Voir les BDD dans le serveur : <code>SHOW DATABASES;</code></li>
+                    <li>Utiliser une BDD : <code>USE bdd;</code></li>
+                    <li>Supprimer une BDD : <code>DROP DATABASE IF EXISTS bdd;</code></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <h2 class="text-center">2- Créer une table et ses colonnes</h2>
+            </div>
+            <div class="col-sm-12">
+                <ul>
+                    <li>Créer une table dans la base 'entreprise':<br>
+                    <code>CREATE TABLE IF NOT EXISTS employes (<br>
+                    id_employes int(3) NOT NULL AUTO_INCREMENT,<br>
+                    prenom varchar(20) DEFAULT NULL,<br>
+                    nom varchar(20) DEFAULT NULL,<br>
+                    sexe enum ('f', 'm') NOT NULL,<br>
+                    service varchar(30) DEFAULT NULL,<br>
+                    date_embauche date DEFAULT NULL,<br>
+                    salaire float DEFAULT NULL,<br>
+                    PRIMARY KEY (id_employes)<br>
+                    )ENGINE=InnoDB DEFAULT CHARSET=latin1 ;</code></li>
+                    <li>Insérer des données dans la table employes :<br>
+                    <code>INSERT INTO employes (id_employes, prenom, nom, sexe, service, date_embauche, salaire) VALUES<br>
+                    (350, 'Jean-pierre', 'Laborde', 'm', 'direction', '1999-12-09', 5000),<br>
+                    (388, 'Clement', 'Gallet', 'm', 'commercial', '2000-01-15', 2300),<br>
+                    (415, 'Thomas', 'Winter', 'm', 'commercial', '2000-05-03', 3550),<br>
+                    (417, 'Chloe', 'Dubar', 'f', 'production', '2001-09-05', 1900),<br>
+                    (491, 'Elodie', 'Fellier', 'f', 'secretariat', '2002-02-22', 1600),<br>
+                    (509, 'Fabrice', 'Grand', 'm', 'comptabilite', '2003-02-20', 1900),<br>
+                    (547, 'Melanie', 'Collier', 'f', 'commercial', '2004-09-08', 3100),<br>
+                    (592, 'Laura', 'Blanchet', 'f', 'direction', '2005-06-09', 4500),<br>
+                    (627, 'Guillaume', 'Miller', 'm', 'commercial', '2006-07-02', 1900),<br>
+                    (655, 'Celine', 'Perrin', 'f', 'commercial', '2006-09-10', 2700),<br>
+                    (699, 'Julien', 'Cottet', 'm', 'secretariat', '2007-01-18', 1390),<br>
+                    (701, 'Mathieu', 'Vignal', 'm', 'informatique', '2008-12-03', 2000),<br>
+                    (739, 'Thierry', 'Desprez', 'm', 'secretariat', '2009-11-17', 1500),<br>
+                    (780, 'Amandine', 'Thoyer', 'f', 'communication', '2010-01-23', 1500),<br>
+                    (802, 'Damien', 'Durand', 'm', 'informatique', '2010-07-05', 2250),<br>
+                    (854, 'Daniel', 'Chevel', 'm', 'informatique', '2011-09-28', 1700),<br>
+                    (876, 'Nathalie', 'Martin', 'f', 'juridique', '2012-01-12', 3200),<br>
+                    (900, 'Benoit', 'Lagarde', 'm', 'production', '2013-01-03', 2550),<br>
+                    (933, 'Emilie', 'Sennard', 'f', 'commercial', '2014-09-11', 1800),<br>
+                    (990, 'Stephanie', 'Lafaye', 'f', 'assistant', '2015-06-02', 1775); </code></li>
+                </ul>
+            </div>
+            <div class="col-sm-12">
+                <h2 class="text-center">3- SELECT et DISTINCT</h2>
+            </div>
+            <div class="col-sm-12">
+                <ul>
+                    <li>Pour voir tous le contenu d'un table : <code>SELECT * FROM table;</code></li>
+                    <li>Sélectionner les prénoms et noms des employés : <code>SELECT colonne, colonne FROM table;</code></li>
+                    <li>Afficher les données sans doublons : <code>SELECT DISTINCT (colonne) FROM table;</code></li>
+                </ul>
+                <p class="alert alert-danger">Les requêtes ne sont pas sensibles à la casse mais une convention indique qu'il faut mettre les mots-clefs des requêtes en majuscules.</p>
+            </div> 
+            <div class="col-sm-12">
+                <h2 class="text-center">4- Les conditions</h2>
+            </div>
+            <div class="col-sm-12">
+                <h2 class="text-center">a) le mot-clef WHERE</h2>
+            </div>
+            <div class="col-sm-12">
+                <ul>
+                    <li>Nous cherchons avec une condition une partie des données : <code>SELECT colonne, colonne FROM table WHERE colonne='donnée';</code></li>
+                </ul>
+            </div> 
+        </div><!-- fin de la troisième row -->
+    </div> <!-- fin du container -->
+
+    <!-- Optional JavaScript -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+   
+  </body>
+</html>

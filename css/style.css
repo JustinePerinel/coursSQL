@@ -1,0 +1,43 @@
+body {
+    background-color: #ddd;
+    font-family: 'Open Sans', sans-serif;
+}
+
+th {
+    text-align: center;
+}
+
+table {
+    border-top: none;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.411);
+}
+
+h1 {
+    font-size: 5em;
+    font-family: 'Amatic SC', cursive;
+    color: blue;
+    text-shadow: 2px 1px 2px #333;
+}
+
+h2 {
+    font-size: 3.5em;
+    font-family: 'Amatic SC', cursive;
+    color: cornflowerblue;
+    padding: 25px;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-style: italic;
+    font-family: 'Amatic SC', cursive;
+    color: darkblue;
+    padding: 15px;
+}
+
+code {
+    font-size: 1.3em;
+    font-weight: 600;
+}

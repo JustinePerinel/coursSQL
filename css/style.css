@@ -3,6 +3,12 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+hr {
+    height: 7px;
+    background: linear-gradient(to right, #0320CE 0%, #09CACB 50%, #00AF33 100%);
+    width: 80%;
+}
+
 th {
     text-align: center;
 }
@@ -12,14 +18,14 @@ table {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.411);
+    background-color: #fff;
 }
 
 h1 {
     font-size: 5em;
     font-family: 'Amatic SC', cursive;
     color: blue;
-    text-shadow: 2px 1px 2px #333;
+    text-shadow: 2px 1px 4px cornflowerblue;
 }
 
 h2 {
@@ -31,13 +37,17 @@ h2 {
 
 h3 {
     font-size: 1.8em;
-    font-style: italic;
     font-family: 'Amatic SC', cursive;
     color: darkblue;
     padding: 15px;
 }
-
+/* 
 code {
     font-size: 1.3em;
     font-weight: 600;
+} */
+
+#tableComparaisons {
+    width: 70%;
+    margin: auto;
 }
